@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT Create Band - FAIZHOSTING</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(30, 30, 46, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #4e4e8a;
+        }
+        
+        header h1 {
+            color: #7b68ee;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        
+        header p {
+            color: #a9a9cc;
+        }
+        
+        .login-section {
+            background: rgba(40, 40, 66, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #b8b8e6;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #4e4e8a;
+            background: #1c1c34;
+            color: #fff;
+            font-size: 16px;
+        }
+        
+        .btn {
+            background: #7b68ee;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            background: #6a5acd;
+        }
+        
+        .menu-section {
+            display: none;
+        }
+        
+        .menu-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #4e4e8a;
+        }
+        
+        .menu-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #2a2a4a;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .menu-tab.active {
+            background: #7b68ee;
+        }
+        
+        .menu-content {
+            display: none;
+            padding: 20px;
+            background: rgba(40, 40, 66, 0.9);
+            border-radius: 0 10px 10px 10px;
+        }
+        
+        .menu-content.active {
+            display: block;
+        }
+        
+        .result-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: #1c1c34;
+            border-radius: 8px;
+            border: 1px solid #4e4e8a;
+            white-space: pre-line;
+        }
+        
+        .copy-btn {
+            margin-top: 10px;
+            background: #5c4bbf;
+        }
+        
+        .credit {
+            text-align: center;
+            margin-top: 30px;
+            color: #a9a9cc;
+            font-size: 14px;
+        }
+        
+        .video-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .video-container video {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        
+        .tutorial {
+            background: rgba(40, 40, 66, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .tutorial ol {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .tutorial li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MT CREATE BAND</h1>
+            <p>Tools untuk membuat teks template</p>
+        </header>
+        
+        <section class="login-section" id="loginSection">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Masukkan username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Masukkan password">
+            </div>
+            <button class="btn" onclick="login()">Masuk</button>
+        </section>
+        
+        <section class="menu-section" id="menuSection">
+            <div class="menu-tabs">
+                <div class="menu-tab active" onclick="showMenu('mtBand')">MT BAND</div>
+                <div class="menu-tab" onclick="showMenu('mtToPerma')">MT TO PERMA WORK</div>
+                <div class="menu-tab" onclick="showMenu('mtUnban')">MT UNBANED RANDOM</div>
+            </div>
+            
+            <div id="mtBand" class="menu-content active">
+                <h3>MT BAND (RANDOM)</h3>
+                <div class="form-group">
+                    <label for="nama">Masukkan Nama</label>
+                    <input type="text" id="nama" placeholder="Masukkan nama">
+                </div>
+                <div class="form-group">
+                    <label for="link1">Masukkan Link Slot 1</label>
+                    <input type="text" id="link1" placeholder="Masukkan link slot 1">
+                </div>
+                <div class="form-group">
+                    <label for="link2">Masukkan Link Slot 2</label>
+                    <input type="text" id="link2" placeholder="Masukkan link slot 2">
+                </div>
+                <div class="form-group">
+                    <label for="link3">Masukkan Link Slot 3</label>
+                    <input type="text" id="link3" placeholder="Masukkan link slot 3">
+                </div>
+                <button class="btn" onclick="generateMTBand()">Generate Teks</button>
+                
+                <div class="result-box" id="mtBandResult"></div>
+                <button class="btn copy-btn" onclick="copyText('mtBandResult')">Salin Teks</button>
+            </div>
+            
+            <div id="mtToPerma" class="menu-content">
+                <h3>MT TO PERMA WORK</h3>
+                <div class="form-group">
+                    <label for="nomorPerma">Masukkan Nomor (awalan 62)</label>
+                    <input type="text" id="nomorPerma" placeholder="Contoh: 628123456789">
+                </div>
+                <button class="btn" onclick="generateMTToPerma()">Generate Teks</button>
+                
+                <div class="result-box" id="mtToPermaResult"></div>
+                <button class="btn copy-btn" onclick="copyText('mtToPermaResult')">Salin Teks</button>
+            </div>
+            
+            <div id="mtUnban" class="menu-content">
+                <h3>MT UNBANED RANDOM</h3>
+                <div class="form-group">
+                    <label for="nomorUnban">Masukkan Nomor (awalan 62)</label>
+                    <input type="text" id="nomorUnban" placeholder="Contoh: 628123456789">
+                </div>
+                <div class="form-group">
+                    <label>Pilih Jenis Teks:</label>
+                    <select id="jenisTeks" onchange="toggleTeksUnban()">
+                        <option value="fresh">Teks Ban Fresh</option>
+                        <option value="batu">Teks Unban Batu</option>
+                    </select>
+                </div>
+                <button class="btn" onclick="generateMTUnban()">Generate Teks</button>
+                
+                <div class="result-box" id="mtUnbanResult"></div>
+                <button class="btn copy-btn" onclick="copyText('mtUnbanResult')">Salin Teks</button>
+                
+                <div class="video-container">
+                    <h4>Tutorial:</h4>
+                    <video controls>
+                        <source src="https://files.catbox.moe/zobqgj.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung pemutaran video.
+                    </video>
+                </div>
+                
+                <div class="tutorial">
+                    <h4>Tutorial Band WA Memakai WA FC:</h4>
+                    <ol>
+                        <li>Memakai WA FC</li>
+                        <li>Kirim pesan kepada korban</li>
+                        <li>Nyalakan Fake Chat</li>
+                        <li>Ketika sudah di balas kirim MT yang sudah dibuat</li>
+                        <li>Lalu matikan Fake</li>
+                        <li>Report teks sebanyak 15 kali</li>
+                        <li>Report profil 20 kali</li>
+                        <li>Blokir sebanyak 4 kali</li>
+                        <li>Jika sudah done</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <div class="credit">
+            <p>FAIZ HOSTING DIGITAL</p>
+            <p>2025©</p>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk login
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === 'FAIZHOSTING' && password === '12345') {
+                document.getElementById('loginSection').style.display = 'none';
+                document.getElementById('menuSection').style.display = 'block';
+            } else {
+                alert('Username atau password salah!');
+            }
+        }
+        
+        // Fungsi untuk menampilkan menu
+        function showMenu(menuId) {
+            // Sembunyikan semua menu
+            const menus = document.getElementsByClassName('menu-content');
+            for (let i = 0; i < menus.length; i++) {
+                menus[i].classList.remove('active');
+            }
+            
+            // Tampilkan menu yang dipilih
+            document.getElementById(menuId).classList.add('active');
+            
+            // Update tab aktif
+            const tabs = document.getElementsByClassName('menu-tab');
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+            
+            // Aktifkan tab yang sesuai
+            event.currentTarget.classList.add('active');
+        }
+        
+        // Fungsi untuk generate MT Band
+        function generateMTBand() {
+            const nama = document.getElementById('nama').value || '[NAMA]';
+            const link1 = document.getElementById('link1').value || 'https://t.ly/evoseru';
+            const link2 = document.getElementById('link2').value || 'https://t.ly/Hiburangratis';
+            const link3 = document.getElementById('link3').value || 'https://t.ly/kelasasupan';
+            
+            const teks = `💸ATUALIZAÇÃO MAIS RECENTE DO PADRÃO DE CAÇA-NÍQUEIS GACOR‼️
+O RTP MAIS MORTAL — MAIOR TAXA DE VITÓRIA!
+(${nama})
+
+💥Zeus Hades
+💥Poder de Thor
+💥Caminhos de Mahjong
+💥Neko da Sorte
+🎰Velho Oeste
+💯Recompensa Selvagem
+Completo com HORAS GACOR + PADRÃO DE JACKPOT, basta segui-lo!🀄
+Quer sacar várias vezes?   🎰Experimente este padrão agora na EVOHOKI
+💯 Não precisa de sentimento, basta girar!
+
+💯L1NK G4C0R
+📌 ${link1} 1
+
+👉 A Comunidade Mais Popular
+📌 ${link2} 2
+
+🍭O Canal Mais Popular do Telegram
+📌 ${link3} 3`;
+            
+            document.getElementById('mtBandResult').textContent = teks;
+        }
+        
+        // Fungsi untuk generate MT To Perma Work
+        function generateMTToPerma() {
+            let nomor = document.getElementById('nomorPerma').value;
+            
+            // Pastikan nomor diawali dengan 62
+            if (nomor && !nomor.startsWith('62')) {
+                alert('Nomor harus diawali dengan 62');
+                return;
+            }
+            
+            if (!nomor) {
+                nomor = '62';
+            }
+            
+            const teks = `Por favor, desative o número da minha conta (${nomor}). O meu número de WhatsApp foi banido. Por favor, ative-o novamente. O meu número pessoal. Os meus amigos e familiares estão à minha espera. A minha conta comercial está muito chateada. Por favor, Sr. Assim que o meu número for aberto, ficarei muito grato. Se tiver algum erro, peço desculpa.
+
+Esta conta está envolvida em spam em massa e na promoção de jogos de azar online ilegais. Ela também envia links maliciosos, golpes financeiros e conteúdo ilegal. Por favor, bloqueie-a permanentemente para a segurança do usuário.
+
+Número usado para crime: jogos de azar ilegais, fraude, spam, phishing e roubo de dados bancários. Solicito bloqueio permanente imediato.
+
+O meu número de WhatsApp está imediatamente porque o número foi perdido.`;
+            
+            document.getElementById('mtToPermaResult').textContent = teks;
+        }
+        
+        // Fungsi untuk generate MT Unban
+        function generateMTUnban() {
+            let nomor = document.getElementById('nomorUnban').value;
+            const jenisTeks = document.getElementById('jenisTeks').value;
+            
+            // Pastikan nomor diawali dengan 62
+            if (nomor && !nomor.startsWith('62')) {
+                alert('Nomor harus diawali dengan 62');
+                return;
+            }
+            
+            if (!nomor) {
+                nomor = '62xxxxxx';
+            }
+            
+            let teks = '';
+            
+            if (jenisTeks === 'fresh') {
+                teks = `Handsome I would like to appeal the ban on my account since 2020 , Because when I wanted to use WhatsApp, it suddenly said "Register a new number" even though that number is important for me to communicate and for my school  So I ask you to please recover my ${nomor} account as soon as possible / in a short time because I really need that number again, thank you, I hope you understand.
+
+Harap melakukan unban di email dan WA ori`;
+            } else {
+                teks = `MT UNBAN WA PERMA BATU 2H BY PAELZZY V3
+
+BANDING MENGGUNAKAN APLIKASI WHATSAPP ORI/BUSSINES TAG:
+
+support@support.whatsapp.com 
+
+Teks banding:
+Hello WhatsApp team, I am a new user of the WhatsApp application, I am a woman. I want to file a complaint about my account which was suddenly blocked permanently 2 days ago my number is: https://wa.me/+${nomor}@contact-help.whatsapp.com, I don't know why my account was blocked permanently by WhatsApp I have never violated the policies/conditions provided by WhatsApp, please help the WhatsApp team immediately restore/restore the WhatsApp account, I want to open WhatsApp to communicate with my brother suddenly got a message "your account cannot be used" please help the WhatsApp team immediately restore my WhatsApp account in da next 1 hour so I can use my WhatsApp account again please help WhatsApp thank you`;
+            }
+            
+            document.getElementById('mtUnbanResult').textContent = teks;
+        }
+        
+        // Fungsi untuk menyalin teks
+        function copyText(elementId) {
+            const resultElement = document.getElementById(elementId);
+            const textArea = document.createElement('textarea');
+            textArea.value = resultElement.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert('Teks berhasil disalin!');
+        }
+        
+        // Fungsi untuk toggle teks unban
+        function toggleTeksUnban() {
+            // Fungsi ini bisa dikembangkan jika diperlukan
+        }
+    </script>
+</body>
+</html>
